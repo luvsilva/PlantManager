@@ -5,7 +5,8 @@ import colors from '../styles/colors';
 import { Welcome } from '../pages/Welcome';
 import { UserIdentification } from '../pages/UserIdentification';
 import { Confirmation } from '../pages/Confirmation';
-import { PlantSelect } from '../pages/PlantSelect';
+import AuthRoutes from '../routes/tab.routes';
+import { PlantSave } from '../pages/PlantSave';
 
 const stackRoutes = createStackNavigator();
 
@@ -14,8 +15,9 @@ const AppRoutes : React.FC = () =>(
         headerMode='none'
         screenOptions={{
             cardStyle:{
-                backgroundColor: colors.white
+                backgroundColor: colors.white,                
             },
+            
         }}
     >
         <stackRoutes.Screen
@@ -32,7 +34,15 @@ const AppRoutes : React.FC = () =>(
         />
         <stackRoutes.Screen
             name="PlantSelect"
-            component={PlantSelect}
+            component={AuthRoutes}
+        />
+        <stackRoutes.Screen
+            name="PlantSave"
+            component={PlantSave}
+        />
+        <stackRoutes.Screen
+            name="MyPlants"
+            component={AuthRoutes}
         />
 
 
